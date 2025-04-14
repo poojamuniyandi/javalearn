@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+</head>
+<body>
+<center>
+  <table border="1" id="input">
+    <tr>
+      <td>name</td>
+      <td><input type="text" id="name" /></td>
+    </tr>
+    <tr>
+      <td>Age</td>
+      <td><input type="number" id="age" /></td>
+    </tr>
+    <tr>
+      <td>gender</td>
+      <td>
+        <input type="radio" name="gender" value="male" /> male
+        <input type="radio" name="gender" value="female" /> female
+      </td>
+    </tr>
+    <tr>
+      <td>course</td>
+      <td>
+        <select id="course">
+          <option>javascript</option>
+          <option>python</option>
+          <option>java</option>
+          <option>ruby</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><input type="email" id="email" /></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align:center;">
+        <button onclick="update(event)">Save</button>
+      </td>
+    </tr>
+  </table>
+</center>
+
+<br />
+
+<center>
+  <table border="1" id="result">
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Course</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+  </table>
+</center>
+
+<script>
+  function update(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const age = document.getElementById("age").value;
+    const gender = document.querySelector('input[name="gender"]:checked')?.value || "N/A";
+    const course = document.getElementById("course").value;
+    const email = document.getElementById("email").value;
+
+    const row = document.createElement("tr");
+
+    row.innerHTML = `
+      <td>${name}</td>
+      <td>${age}</td>
+      <td>${gender}</td>
+      <td>${course}</td>
+      <td>${email}</td>
+      <td><button onclick="deleteItem(event)">Delete</button></td>
+    `;
+
+    document.getElementById("result").appendChild(row);
+  }
+
+  function deleteItem(event) {
+    event.target.closest("tr").remove();
+  }
+</script>
+</body>
+</html>

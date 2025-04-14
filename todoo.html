@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <table border="1" id="input">
+        <tr id="name">
+            <td>name</td><td><input></td>
+        </tr>
+        <tr id="age"><td>Age</td><td><input type="number"></td></tr>
+        <tr id="gender"><td>gender</td>
+            <td>
+                <input type="radio" name="gender"> male 
+                <input type="radio" name="gender"> female
+            </td>
+        </tr>
+        <tr id="course">
+            <td>
+                course
+            </td>
+            <td><select>
+                <option>javascript</option>
+                <option>python</option>
+                <option>java</option>
+                <option>ruby</option>
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td id="email">
+                Email
+            </td>
+            <td>
+                <input type="email">
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+        
+            <button input type="submit" onclick="update(event)">
+                save
+            </button></td></tr>
+        
+        
+    </table>
+</center>
+<br>
+<center>
+<table border="20" id="result">
+    
+    <tr>
+        <td>name</td>
+        <td> age</td>
+        <td>gender</td>
+        <td>course</td>
+        <td>Email</td>
+        <td> actions</td>
+    </tr>
+</table>
+</center>
+    
+</body>
+<script>
+    var input=document.getElementById("input")
+    var result=document.getElementById("result")
+    var name=document.getElementById("name")
+    var age=document.getElementById("age")
+    var gender=document.getElementById("gender")
+    var course=document.getElementById("coourse")
+    var email=document.getElementById("email")
+    function update(event)
+        {
+            var table=document.createElement("tr")
+            table.innerHTML=name.value+"<button onclick='deleteItem(event)'>delete</button>"
+            
+            result.append(table)
+        }
+        function deleteItem(event)
+    {
+        event.target.parentElement.remove()
+    }
+    
+</script>
+</html>

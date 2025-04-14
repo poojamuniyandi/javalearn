@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookstore</title>
+    <link rel="stylesheet" href="C:\Users\Pooja\Desktop\javascript programming\beginpro\color.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Lavs Books</h1>
+    </div>
+    <div class="container">
+        <div class="readbox">
+            <h2>DaddyMommy</h2>
+            <h4>robert</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quos inventore voluptate cupiditate vel quod esse at, qui doloribus, sed assumenda illo dignissimos dolores voluptas totam ut quidem, voluptates non.</p>
+            <button id="deletemsg" onclick="deletebook(event)">delete</button>
+
+        </div>
+        
+    </div>
+   
+    <div class="popup-overlay"></div>
+    <div class="popup-box">
+        <h2>Add Book</h2>
+        <form>
+        <input placeholder="book title" id="input-title">
+        <input placeholder="book author" id="input-author">
+        <textarea placeholder="short discription" id="input-discription"></textarea>
+        <button id="addbutton">ADD</button>
+        <button id="cancelbutton">CANCEL</button>
+    </form>
+    </div>
+    <button class="add-popup" id="add-popup-button">+</button>
+    <script src="C:\Users\Pooja\Desktop\javascript programming\beginpro\script.js"></script>
+</body>
+</html>
